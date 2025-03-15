@@ -9,10 +9,11 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eaf7ea;
+            color: #2d572c;
         }
         header {
-            background-color: #333;
+            background-color: #2d572c;
             color: white;
             padding: 20px;
             text-align: center;
@@ -24,24 +25,45 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .container:hover {
+            transform: scale(1.02);
         }
         h2 {
-            color: #333;
+            color: #2d572c;
         }
-        ul {
-            list-style: none;
-            padding: 0;
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        li {
-            background: #eee;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
+        .service-item {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        .service-item:hover {
+            background: #c3e6cb;
+        }
+        .service-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .image-banner {
+            width: 100%;
+            height: 300px;
+            background: url('https://picsum.photos/1600/900?random=1') center/cover no-repeat;
         }
         footer {
             text-align: center;
             padding: 10px;
-            background: #333;
+            background: #2d572c;
             color: white;
             margin-top: 20px;
         }
@@ -52,14 +74,38 @@
         <h1>Tribe Solutions</h1>
         <p>Excelência em soluções para startups e desenvolvimento de software</p>
     </header>
+    <div class="image-banner"></div>
     <div class="container">
         <h2>Nossos Serviços</h2>
-        <ul>
-            <li>Consultoria em startups para desenvolvimento de aplicações de alta escala</li>
-            <li>Licitações de software</li>
-            <li>Cursos de desenvolvimento de software</li>
-            <li>Outros serviços relacionados a tecnologia e inovação</li>
-        </ul>
+        <div class="services">
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=2" alt="Consultoria em startups">
+                <p><strong>Consultoria em startups</strong>: ajudamos na estruturação e escalabilidade de aplicações inovadoras.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=3" alt="Licitações de software">
+                <p><strong>Licitações de software</strong>: oferecemos suporte completo na participação de processos licitatórios, desde a análise de editais até a entrega final dos projetos.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="Desenvolvimento de software">
+                <p><strong>Desenvolvimento de software sob demanda</strong>: criamos soluções personalizadas para atender às necessidades do seu negócio.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=5" alt="Cursos e treinamentos">
+                <p><strong>Cursos e treinamentos</strong>: capacitação em desenvolvimento de software, metodologias ágeis e boas práticas.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=6" alt="Auditoria e otimização de sistemas">
+                <p><strong>Auditoria e otimização de sistemas</strong>: análise detalhada para melhorar desempenho, segurança e escalabilidade de aplicações.</p>
+            </div>
+            <div class="service-item">
+                <img src="https://picsum.photos/400/300?random=7" alt="Outros serviços">
+                <p><strong>Outros serviços</strong>: suporte em inovação, consultoria tecnológica e assessoria estratégica para projetos de TI.</p>
+            </div>
+        </div>
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:contato@tribesolutions.com.br">contato@tribesolutions.com.br</a></p>
+        <p>Telefone: <a href="tel:+5592993531716">(92) 99353-1716</a></p>
     </div>
     <footer>
         <p>&copy; 2025 Tribe Solutions - Todos os direitos reservados.</p>
