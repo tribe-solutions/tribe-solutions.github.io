@@ -77,7 +77,7 @@ img {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080/121212/004D40?text=Fundo+Tecnologico+Abstrato') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-3.jpg') no-repeat center center/cover;
     min-height: 90vh;
     display: flex;
     flex-direction: column;
