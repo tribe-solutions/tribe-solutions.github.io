@@ -5,7 +5,7 @@
   --color-bg-elevated: #ffffff;
   --color-ink: #0f1b15;
   --color-ink-muted: #4a544d;
-  --color-ink-faint: #828c84;
+  --color-ink-faint: #65706a;
   --color-line: #e6e1d4;
   --color-line-strong: #d4cdb9;
 
@@ -26,6 +26,9 @@
   --radius-sm: 0.375rem;
   --radius-md: 0.625rem;
   --radius-lg: 1rem;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -48,6 +51,30 @@
     color: var(--color-bg);
   }
 
+  :focus-visible {
+    outline: 2px solid var(--color-forest-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  #licitacoes :focus-visible {
+    outline-color: var(--color-gold-300);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   h1, h2, h3 {
     font-family: var(--font-display), Georgia, serif;
     letter-spacing: -0.02em;
@@ -66,6 +93,139 @@
   @media (min-width: 768px) {
     .container-tight {
       padding-inline: 3rem;
+    }
+  }
+
+  /* Entrada orquestrada (hero) e scroll-reveal. Usa a propriedade
+     `translate` nos keyframes — não `transform` — para não congelar o
+     transform via fill-mode e matar os hovers com translate dos cards. */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      translate: 0 14px;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .rise {
+      animation: rise-in 0.65s var(--ease-out-quart) both;
+      animation-delay: var(--rise-delay, 0ms);
+    }
+
+    /* .reveal-ready só entra no <html> via JS — sem JS, nada fica oculto */
+    .reveal-ready [data-reveal] {
+      opacity: 0;
+    }
+
+    .reveal-ready [data-reveal].is-revealed {
+      opacity: 1;
+      animation: rise-in 0.7s var(--ease-out-quart) both;
+      animation-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal-ready [data-reveal] .cascade {
+      opacity: 0;
+    }
+
+    .reveal-ready [data-reveal].is-revealed .cascade {
+      opacity: 1;
+      animation: rise-in 0.45s var(--ease-out-quart) both;
+      animation-delay: calc(250ms + var(--cascade-i, 0) * 70ms);
+    }
+  }
+
+  /* ===== Vagalumes (seção Licitações) ===== */
+  @keyframes firefly-drift {
+    0%,
+    100% {
+      translate: 0 0;
+    }
+    25% {
+      translate: 26px -20px;
+    }
+    50% {
+      translate: -12px -34px;
+    }
+    75% {
+      translate: -30px 12px;
+    }
+  }
+
+  @keyframes firefly-glow {
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Estado base (reduced-motion / fallback): constelação estática */
+  .firefly {
+    opacity: 0.35;
+  }
+
+  /* ===== Chegada cinematográfica (hero) ===== */
+  @keyframes cine-rise {
+    from {
+      opacity: 0;
+      translate: 0 26px;
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes cine-sweep {
+    from {
+      scale: 0 1;
+    }
+    to {
+      scale: 1 1;
+    }
+  }
+
+  .cine-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .cine-underline::after {
+    content: "";
+    position: absolute;
+    left: 0.04em;
+    right: 0.1em;
+    bottom: -0.05em;
+    height: 0.045em;
+    background: var(--color-gold-500);
+    transform-origin: left center;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .firefly {
+      animation:
+        firefly-drift var(--ff-dur, 12s) ease-in-out var(--ff-delay, 0s)
+          infinite,
+        firefly-glow var(--ff-glow, 3s) ease-in-out var(--ff-delay, 0s)
+          infinite;
+    }
+
+    .cine-word {
+      animation: cine-rise 0.7s var(--ease-out-expo) both;
+      animation-delay: var(--cine-delay, 0ms);
+    }
+
+    .cine-underline::after {
+      animation: cine-sweep 0.5s var(--ease-out-expo) both;
+      animation-delay: var(--cine-sweep-delay, 900ms);
     }
   }
 
