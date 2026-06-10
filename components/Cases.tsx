@@ -14,8 +14,8 @@ type CaseItem = {
 const cases: CaseItem[] = [
   {
     name: "Bora Licitar",
-    href: "https://kanban.boralicitar.com.br",
-    domain: "kanban.boralicitar.com.br",
+    href: "https://kanban.boralicitar.com",
+    domain: "kanban.boralicitar.com",
     tag: "SaaS · GovTech",
     mockup: "boralicitar",
   },
@@ -111,7 +111,7 @@ function BoraLicitarMockup() {
         <span className="h-2 w-2 rounded-full bg-yellow-300/70" />
         <span className="h-2 w-2 rounded-full bg-green-300/70" />
         <span className="ml-2 truncate text-[10px] text-bg/40">
-          kanban.boralicitar.com.br
+          kanban.boralicitar.com
         </span>
       </div>
       <div className="grid flex-1 grid-cols-4 gap-1.5">
