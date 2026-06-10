@@ -1,13 +1,13 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { waLink } from "@/lib/site";
 
-const WHATSAPP_HREF =
-  "https://wa.me/5592993531716?text=Ol%C3%A1%2C%20vim%20do%20site%20da%20Tribe%20Solutions.";
+const WHATSAPP_HREF = waLink();
 
 export function Contact() {
   return (
     <section id="contato" className="py-20 md:py-28">
       <div className="container-tight">
-        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+        <div data-reveal className="mx-auto flex max-w-2xl flex-col items-center text-center">
           <span className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
             Contato
           </span>
