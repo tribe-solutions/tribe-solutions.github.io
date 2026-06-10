@@ -93,7 +93,7 @@ export function Licitacoes() {
                   key={p.acronym}
                   className="flex items-center gap-4 rounded-xl border border-bg/10 bg-bg/[0.03] px-5 py-4 backdrop-blur-sm"
                 >
-                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gold-500/30 bg-gold-500/10 font-display text-[11px] font-medium tracking-tight text-gold-300">
+                  <span className="inline-flex h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-gold-500/30 bg-gold-500/10 px-2 font-display text-[10px] font-medium tracking-tight text-gold-300">
                     {p.acronym}
                   </span>
                   <div className="flex flex-col">
