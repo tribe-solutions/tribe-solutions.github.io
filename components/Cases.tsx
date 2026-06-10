@@ -41,7 +41,7 @@ export function Cases() {
   return (
     <section id="cases" className="py-20 md:py-28">
       <div className="container-tight">
-        <div className="mb-12 flex items-end justify-between gap-6">
+        <div data-reveal className="mb-12 flex items-end justify-between gap-6">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
               Cases
@@ -53,13 +53,15 @@ export function Cases() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {cases.map((c) => (
+          {cases.map((c, i) => (
             <a
               key={c.name}
               href={c.href}
               target="_blank"
               rel="noopener"
-              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-bg-elevated transition-all hover:border-forest-500 hover:shadow-[0_24px_60px_-30px_rgba(15,27,21,0.2)]"
+              data-reveal
+              style={{ "--reveal-delay": `${i * 90}ms` } as React.CSSProperties}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-bg-elevated transition-all duration-300 ease-out-quart hover:-translate-y-1 hover:border-forest-500 hover:shadow-[0_24px_60px_-30px_rgba(15,27,21,0.3)]"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-50">
                 {c.image ? (
@@ -129,7 +131,8 @@ function BoraLicitarMockup() {
             {Array.from({ length: Math.min(col.count, 3) }).map((_, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-1 rounded-sm bg-bg/[0.08] p-1.5"
+                className="cascade flex flex-col gap-1 rounded-sm bg-bg/[0.08] p-1.5"
+                style={{ "--cascade-i": ci + i * 2 } as React.CSSProperties}
               >
                 <div className={`h-0.5 w-2/3 rounded ${col.accent}`} />
                 <div className="h-0.5 w-full rounded bg-bg/15" />

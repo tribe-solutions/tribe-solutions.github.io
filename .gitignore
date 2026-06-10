@@ -42,3 +42,6 @@ next-env.d.ts
 
 # playwright-cli local snapshots
 /.playwright-cli/
+
+# visual brainstorm sessions
+.superpowers/

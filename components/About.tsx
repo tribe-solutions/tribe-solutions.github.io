@@ -2,7 +2,7 @@ export function About() {
   return (
     <section id="sobre" className="border-y border-line/60 bg-bg-elevated py-16 md:py-20">
       <div className="container-tight">
-        <div className="mx-auto max-w-3xl text-center">
+        <div data-reveal className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
             Sobre a Tribe
           </span>

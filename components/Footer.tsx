@@ -18,19 +18,19 @@ export function Footer() {
         </div>
 
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ink-muted">
-          <Link href="#servicos" className="hover:text-ink">
+          <Link href="#servicos" className="transition-colors hover:text-ink">
             Serviços
           </Link>
-          <Link href="#cases" className="hover:text-ink">
+          <Link href="#cases" className="transition-colors hover:text-ink">
             Cases
           </Link>
-          <Link href="#licitacoes" className="hover:text-ink">
+          <Link href="#licitacoes" className="transition-colors hover:text-ink">
             Licitações
           </Link>
-          <Link href="#sobre" className="hover:text-ink">
+          <Link href="#sobre" className="transition-colors hover:text-ink">
             Sobre
           </Link>
-          <Link href="#contato" className="hover:text-ink">
+          <Link href="#contato" className="transition-colors hover:text-ink">
             Contato
           </Link>
         </nav>
