@@ -85,13 +85,8 @@ export function Hero() {
             </Fragment>
           ))}
           <span
-            className="cine-word cine-underline inline-block italic text-gold-700"
-            style={
-              {
-                "--cine-delay": "560ms",
-                "--cine-sweep-delay": "1300ms",
-              } as React.CSSProperties
-            }
+            className="cine-word inline-block italic text-gold-700"
+            style={{ "--cine-delay": "560ms" } as React.CSSProperties}
           >
             ajudar?
           </span>

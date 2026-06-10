@@ -121,9 +121,12 @@
       opacity: 0;
     }
 
+    /* fill backwards (não both): both congelaria a propriedade `translate`
+       após o fim e mataria os hovers com translate dos cards (Tailwind v4
+       usa `translate` nativo em -translate-y-*) */
     .reveal-ready [data-reveal].is-revealed {
       opacity: 1;
-      animation: rise-in 0.7s var(--ease-out-quart) both;
+      animation: rise-in 0.7s var(--ease-out-quart) backwards;
       animation-delay: var(--reveal-delay, 0ms);
     }
 
@@ -133,7 +136,7 @@
 
     .reveal-ready [data-reveal].is-revealed .cascade {
       opacity: 1;
-      animation: rise-in 0.45s var(--ease-out-quart) both;
+      animation: rise-in 0.45s var(--ease-out-quart) backwards;
       animation-delay: calc(250ms + var(--cascade-i, 0) * 70ms);
     }
   }
@@ -184,31 +187,6 @@
     }
   }
 
-  @keyframes cine-sweep {
-    from {
-      scale: 0 1;
-    }
-    to {
-      scale: 1 1;
-    }
-  }
-
-  .cine-underline {
-    position: relative;
-    display: inline-block;
-  }
-
-  .cine-underline::after {
-    content: "";
-    position: absolute;
-    left: 0.04em;
-    right: 0.1em;
-    bottom: -0.05em;
-    height: 0.045em;
-    background: var(--color-gold-500);
-    transform-origin: left center;
-  }
-
   @media (prefers-reduced-motion: no-preference) {
     .firefly {
       animation:
@@ -221,11 +199,6 @@
     .cine-word {
       animation: cine-rise 0.7s var(--ease-out-expo) both;
       animation-delay: var(--cine-delay, 0ms);
-    }
-
-    .cine-underline::after {
-      animation: cine-sweep 0.5s var(--ease-out-expo) both;
-      animation-delay: var(--cine-sweep-delay, 900ms);
     }
   }
 
