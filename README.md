@@ -35,25 +35,33 @@ Para testar o deploy manualmente: aba **Actions → Deploy to GitHub Pages → R
 
 ```
 app/
-  layout.tsx          # fontes, metadata, favicons
+  layout.tsx          # fontes, metadata (og/twitter images), favicons
   page.tsx            # compõe as seções
-  globals.css         # tokens de tema e utilitários
+  not-found.tsx       # 404 customizada (vira out/404.html no Pages)
+  globals.css         # tokens de tema, utilitários, animações (rise/reveal)
 components/
   Nav.tsx
-  Hero.tsx
-  TrustBar.tsx
-  Services.tsx
+  Hero.tsx            # entrada em stagger + input → WhatsApp
+  Services.tsx        # chips clicáveis com prefill por serviço
   Cases.tsx           # cases (com backlinks pros clientes)
   Licitacoes.tsx      # seção dedicada de licitação
   About.tsx
   Contact.tsx
   Footer.tsx
+  JungleBackdrop.tsx  # folhas SVG em sway lento
+  ScrollReveal.tsx    # IntersectionObserver p/ [data-reveal]
+  Fireflies.tsx       # vagalumes da seção licitações
+  GoldenRiver.tsx     # rio dourado no scroll (experimental, xl+)
+lib/
+  site.ts             # número do WhatsApp + waLink() (fonte única)
 public/
   CNAME               # tribesolutions.com.br
   logo*.png/webp      # variantes do logo (geradas por scripts/optimize-logo.mjs)
+  og-banner.png       # preview de link 1200×630 (gerado por scripts/generate-og.mjs)
   favicon_io/
 scripts/
   optimize-logo.mjs   # gera logo otimizado a partir de fonte 2000×2000
+  generate-og.mjs     # gera og-banner.png a partir de public/og-logo.png
 ```
 
 ## Otimizando o logo
