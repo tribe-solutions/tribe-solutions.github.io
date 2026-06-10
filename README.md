@@ -51,7 +51,6 @@ components/
   JungleBackdrop.tsx  # folhas SVG em sway lento
   ScrollReveal.tsx    # IntersectionObserver p/ [data-reveal]
   Fireflies.tsx       # vagalumes da seção licitações
-  GoldenRiver.tsx     # rio dourado no scroll (experimental, xl+)
 lib/
   site.ts             # número do WhatsApp + waLink() (fonte única)
 public/

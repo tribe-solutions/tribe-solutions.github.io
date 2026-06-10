@@ -2,7 +2,6 @@ import { About } from "@/components/About";
 import { Cases } from "@/components/Cases";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { GoldenRiver } from "@/components/GoldenRiver";
 import { Hero } from "@/components/Hero";
 import { Licitacoes } from "@/components/Licitacoes";
 import { Nav } from "@/components/Nav";
@@ -12,7 +11,6 @@ import { Services } from "@/components/Services";
 export default function Home() {
   return (
     <>
-      <GoldenRiver />
       <ScrollReveal />
       <Nav />
       <main className="flex-1">
