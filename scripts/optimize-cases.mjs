@@ -4,6 +4,7 @@ import { statSync } from "node:fs";
 const SOURCES = [
   { src: "public/cases/mundovivido.png", out: "public/cases/mundovivido.webp" },
   { src: "public/cases/anmar.png", out: "public/cases/anmar.webp" },
+  { src: "public/cases/boracorrer.png", out: "public/cases/boracorrer.webp" },
 ];
 
 for (const cfg of SOURCES) {

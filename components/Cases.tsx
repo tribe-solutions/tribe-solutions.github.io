@@ -35,6 +35,14 @@ const cases: CaseItem[] = [
     image: "/cases/anmar.webp",
     imageAlt: "Site da marca Anmar de queijo coalho artesanal",
   },
+  {
+    name: "Bora Correr",
+    href: "https://boracorrer.com.br",
+    domain: "boracorrer.com.br",
+    tag: "Landing Page · Esporte",
+    image: "/cases/boracorrer.webp",
+    imageAlt: "Página do programa de assessoria de corrida Bora Correr",
+  },
 ];
 
 export function Cases() {
@@ -52,7 +60,7 @@ export function Cases() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((c, i) => (
             <a
               key={c.name}
@@ -69,7 +77,7 @@ export function Cases() {
                     src={c.image}
                     alt={c.imageAlt ?? c.name}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 ) : c.mockup === "boralicitar" ? (
