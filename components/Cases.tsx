@@ -40,7 +40,7 @@ const cases: CaseItem[] = [
     href: "https://www.boracorrerbrasil.com.br",
     domain: "boracorrerbrasil.com.br",
     tag: "Plataforma · Esporte",
-    image: "/cases/boracorrer.webp",
+    image: "/cases/boracorrer-manaus.webp",
     imageAlt: "Plataforma Bora Correr com agenda e inscrições de corridas em Manaus",
   },
 ];
