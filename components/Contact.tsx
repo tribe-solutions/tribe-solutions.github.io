@@ -21,6 +21,7 @@ export function Contact() {
               href={WHATSAPP_HREF}
               target="_blank"
               rel="noopener"
+              data-umami-event="contato-whatsapp"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-medium text-bg transition-colors hover:bg-forest-700"
             >
               <Phone className="h-4 w-4" strokeWidth={1.75} />
@@ -28,6 +29,7 @@ export function Contact() {
             </a>
             <a
               href="mailto:contato@tribesolutions.com.br"
+              data-umami-event="contato-email"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong bg-bg-elevated px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink"
             >
               <Mail className="h-4 w-4" strokeWidth={1.75} />

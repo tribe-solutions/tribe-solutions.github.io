@@ -54,6 +54,7 @@ export function Nav() {
             href={waLink()}
             target="_blank"
             rel="noopener"
+            data-umami-event="nav-conversar"
             className="group inline-flex items-center gap-1.5 rounded-full border border-ink bg-ink px-4 py-2 text-sm font-medium text-bg transition-colors hover:bg-forest-700 hover:border-forest-700"
           >
             Conversar

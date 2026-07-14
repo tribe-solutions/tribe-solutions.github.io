@@ -10,7 +10,7 @@ import {
   Gavel,
 } from "lucide-react";
 import { JungleBackdrop } from "./JungleBackdrop";
-import { waLink } from "@/lib/site";
+import { trackEvent, waLink } from "@/lib/site";
 
 const prompts: { icon: typeof Code2; label: string; message: string }[] = [
   {
@@ -46,6 +46,7 @@ export function Hero() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    trackEvent("hero-form-whatsapp", { preenchido: value.trim().length > 0 });
     openWhatsApp(value);
   }
 
@@ -135,7 +136,10 @@ export function Hero() {
             <button
               key={label}
               type="button"
-              onClick={() => openWhatsApp(message)}
+              onClick={() => {
+                trackEvent("hero-chip-whatsapp", { chip: label });
+                openWhatsApp(message);
+              }}
               className="inline-flex items-center gap-2 rounded-full border border-line bg-bg-elevated px-3.5 py-2 text-sm text-ink-muted transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-forest-500 hover:bg-forest-50 hover:text-ink"
             >
               <Icon className="h-3.5 w-3.5" strokeWidth={1.75} />

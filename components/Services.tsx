@@ -61,6 +61,8 @@ export function Services() {
               href={waLink(message)}
               target="_blank"
               rel="noopener"
+              data-umami-event="servico-whatsapp"
+              data-umami-event-servico={label}
               data-reveal
               style={{ "--reveal-delay": `${i * 60}ms` } as React.CSSProperties}
               className="flex flex-col items-center gap-3 rounded-xl border border-line/60 bg-bg p-5 transition-all duration-300 ease-out-quart hover:-translate-y-0.5 hover:border-forest-500 hover:bg-forest-50 hover:shadow-[0_16px_40px_-24px_rgba(15,27,21,0.35)]"

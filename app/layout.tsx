@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Fraunces } from "next/font/google";
+import { UMAMI_WEBSITE_ID } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,6 +81,13 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
+      {UMAMI_WEBSITE_ID && (
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id={UMAMI_WEBSITE_ID}
+        />
+      )}
     </html>
   );
 }

@@ -65,6 +65,7 @@ export function Licitacoes() {
                 href={WHATSAPP_LICITACOES}
                 target="_blank"
                 rel="noopener"
+                data-umami-event="licitacoes-whatsapp"
                 className="group inline-flex items-center gap-1.5 rounded-full border border-gold-500/60 px-5 py-2.5 text-sm font-medium text-gold-300 transition-colors hover:border-gold-300 hover:bg-gold-500/10"
               >
                 Falar sobre licitações
@@ -72,6 +73,7 @@ export function Licitacoes() {
               </a>
               <a
                 href="mailto:contato@tribesolutions.com.br?subject=Licita%C3%A7%C3%B5es"
+                data-umami-event="licitacoes-email"
                 className="text-sm text-bg/70 underline decoration-bg/30 underline-offset-4 transition-colors hover:text-bg hover:decoration-bg/60"
               >
                 ou por e-mail
