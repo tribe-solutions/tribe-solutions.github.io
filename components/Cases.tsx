@@ -37,11 +37,11 @@ const cases: CaseItem[] = [
   },
   {
     name: "Bora Correr",
-    href: "https://boracorrer.com.br",
-    domain: "boracorrer.com.br",
-    tag: "Landing Page · Esporte",
+    href: "https://www.boracorrerbrasil.com.br",
+    domain: "boracorrerbrasil.com.br",
+    tag: "Plataforma · Esporte",
     image: "/cases/boracorrer.webp",
-    imageAlt: "Página do programa de assessoria de corrida Bora Correr",
+    imageAlt: "Plataforma Bora Correr com agenda e inscrições de corridas em Manaus",
   },
 ];
 
