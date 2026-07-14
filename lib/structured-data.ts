@@ -1,3 +1,5 @@
+import type { Artigo } from "./artigos";
+
 const SITE_URL = "https://tribesolutions.com.br";
 
 /**
@@ -69,3 +71,27 @@ export const organizationJsonLd = {
     })),
   },
 };
+
+/**
+ * JSON-LD do artigo. `publisher`/`author` apontam para o @id da organização
+ * acima em vez de repetir os dados — é o mesmo nó do grafo, e duplicar
+ * abriria espaço pra os dois divergirem.
+ */
+export function articleJsonLd(artigo: Artigo) {
+  const url = `${SITE_URL}/artigos/${artigo.slug}/`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: artigo.title,
+    description: artigo.description,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    datePublished: artigo.date,
+    dateModified: artigo.updated ?? artigo.date,
+    inLanguage: "pt-BR",
+    keywords: artigo.keywords,
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}

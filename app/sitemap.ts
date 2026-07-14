@@ -1,14 +1,20 @@
 import type { MetadataRoute } from "next";
+import { listarArtigos } from "@/lib/artigos";
 
 export const dynamic = "force-static";
 
+const SITE = "https://tribesolutions.com.br";
+
 /**
- * Hoje só existe a home. Ao criar páginas novas (ex.: /cases/<slug>),
- * adicionar aqui — o Google não descobre o que não está linkado nem listado.
- *
- * Sem lastModified de propósito: com `new Date()` toda build anunciaria
- * alteração de conteúdo que não houve, e lastmod mentiroso é ignorado.
+ * Home e índice sem lastModified de propósito: com `new Date()` toda build
+ * anunciaria alteração que não houve, e lastmod mentiroso é ignorado.
+ * Nos artigos ele é real — vem do frontmatter.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [{ url: "https://tribesolutions.com.br" }];
+  const artigos = listarArtigos().map((a) => ({
+    url: `${SITE}/artigos/${a.slug}/`,
+    lastModified: a.updated ?? a.date,
+  }));
+
+  return [{ url: SITE }, { url: `${SITE}/artigos/` }, ...artigos];
 }

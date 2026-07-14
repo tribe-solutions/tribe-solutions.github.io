@@ -216,3 +216,101 @@
     mix-blend-mode: multiply;
   }
 }
+
+@layer components {
+  /* Prosa dos artigos. Escrita à mão em cima dos tokens do @theme em vez do
+     plugin typography: são ~40 linhas e o plugin brigaria com a paleta. */
+  .prose-tribe {
+    color: var(--color-ink-muted);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .prose-tribe > * + * {
+    margin-top: 1.25em;
+  }
+
+  .prose-tribe h2 {
+    color: var(--color-ink);
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-top: 2.5em;
+    margin-bottom: -0.25em;
+  }
+
+  @media (min-width: 768px) {
+    .prose-tribe h2 {
+      font-size: 1.75rem;
+    }
+  }
+
+  .prose-tribe h3 {
+    color: var(--color-ink);
+    font-size: 1.1875rem;
+    line-height: 1.35;
+    margin-top: 2em;
+    margin-bottom: -0.4em;
+  }
+
+  .prose-tribe strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  /* O sublinhado carrega a distinção sozinho: link (forest-500) e corpo
+     (ink-muted) são dois verdes escuros próximos demais pra cor bastar.
+     A 35% ele sumia na tela — WCAG 1.4.1. */
+  .prose-tribe a {
+    color: var(--color-forest-500);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-forest-500) 60%, transparent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s var(--ease-out-quart);
+  }
+
+  .prose-tribe a:hover {
+    text-decoration-color: var(--color-forest-500);
+  }
+
+  .prose-tribe ul,
+  .prose-tribe ol {
+    padding-left: 1.25em;
+  }
+
+  .prose-tribe ul { list-style: disc; }
+  .prose-tribe ol { list-style: decimal; }
+
+  .prose-tribe li + li {
+    margin-top: 0.5em;
+  }
+
+  .prose-tribe li::marker {
+    color: var(--color-forest-300);
+  }
+
+  .prose-tribe hr {
+    border: 0;
+    border-top: 1px solid var(--color-line);
+    margin-block: 3em;
+  }
+
+  /* O bloco final de CTA — em itálico, depois do <hr> */
+  .prose-tribe hr + p {
+    color: var(--color-ink-faint);
+    font-size: 0.9375rem;
+  }
+
+  .prose-tribe code {
+    background: var(--color-forest-50);
+    border-radius: var(--radius-sm);
+    padding: 0.15em 0.4em;
+    font-size: 0.9em;
+  }
+
+  .prose-tribe blockquote {
+    border-left: 2px solid var(--color-forest-300);
+    padding-left: 1.25em;
+    font-style: italic;
+  }
+}

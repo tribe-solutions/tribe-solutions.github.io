@@ -3,11 +3,14 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { waLink } from "@/lib/site";
 
+/** Âncoras com "/" na frente: o Nav também roda em /artigos, onde
+ *  "#servicos" sozinho não teria pra onde rolar. */
 const links = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#cases", label: "Cases" },
-  { href: "#licitacoes", label: "Licitações" },
-  { href: "#sobre", label: "Sobre" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#cases", label: "Cases" },
+  { href: "/#licitacoes", label: "Licitações" },
+  { href: "/artigos", label: "Artigos" },
+  { href: "/#sobre", label: "Sobre" },
 ];
 
 export function Nav() {
@@ -45,10 +48,10 @@ export function Nav() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="#licitacoes"
+            href="/artigos"
             className="text-sm text-ink-muted transition-colors hover:text-ink md:hidden"
           >
-            Licitações
+            Artigos
           </Link>
           <a
             href={waLink()}
