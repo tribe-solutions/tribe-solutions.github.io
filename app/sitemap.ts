@@ -16,5 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: a.updated ?? a.date,
   }));
 
-  return [{ url: SITE }, { url: `${SITE}/artigos/` }, ...artigos];
+  return [
+    { url: SITE },
+    { url: `${SITE}/cases/bora-licitar/` },
+    { url: `${SITE}/artigos/` },
+    ...artigos,
+  ];
 }

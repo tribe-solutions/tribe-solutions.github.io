@@ -68,4 +68,4 @@ Quando dizemos que a Tribe faz automação com IA, é disso que estamos falando 
 
 ---
 
-*A Tribe roda esse pipeline no próprio dia a dia e disponibiliza o [Kanban de Licitações](https://kanban.boralicitar.com.br) pra terceiros. Se você tem um processo que parece com isso e quer conversar sobre automatizar, [chama a gente no WhatsApp](#whatsapp).*
+*A Tribe roda esse pipeline no próprio dia a dia e disponibiliza o [Kanban de Licitações](https://kanban.boralicitar.com) pra terceiros. Se você tem um processo que parece com isso e quer conversar sobre automatizar, [chama a gente no WhatsApp](#whatsapp).*

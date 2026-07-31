@@ -77,4 +77,4 @@ Sobre como isso funciona por dentro, escrevemos em [o que faz um agente de IA de
 
 ---
 
-*A Tribe construiu o [Kanban de Licitações](https://kanban.boralicitar.com.br) pra resolver exatamente isso no nosso próprio dia a dia — e hoje ele roda pra terceiros também. Se você quer conversar sobre automação, software sob medida ou sobre esse mercado, [chama a gente no WhatsApp](#whatsapp).*
+*A Tribe construiu o [Kanban de Licitações](https://kanban.boralicitar.com) pra resolver exatamente isso no nosso próprio dia a dia — e hoje ele roda pra terceiros também. Se você quer conversar sobre automação, software sob medida ou sobre esse mercado, [chama a gente no WhatsApp](#whatsapp).*

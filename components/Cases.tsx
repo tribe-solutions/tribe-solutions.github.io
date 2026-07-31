@@ -1,23 +1,28 @@
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 type CaseItem = {
   name: string;
   href: string;
+  /** Texto sob o nome. Em case interno é a chamada; em externo, o domínio. */
   domain: string;
   tag: string;
   image?: string;
   imageAlt?: string;
   mockup?: "boralicitar";
+  /** Rota interna: abre na mesma aba e não leva rel="noopener". */
+  interno?: boolean;
 };
 
 const cases: CaseItem[] = [
   {
     name: "Bora Licitar",
-    href: "https://kanban.boralicitar.com.br",
-    domain: "kanban.boralicitar.com.br",
+    href: "/cases/bora-licitar",
+    domain: "476 triadas · 10 na mesa",
     tag: "SaaS · GovTech",
     mockup: "boralicitar",
+    interno: true,
   },
   {
     name: "Mundo Vivido",
@@ -45,6 +50,9 @@ const cases: CaseItem[] = [
   },
 ];
 
+const CARD_CLASS =
+  "group flex flex-col overflow-hidden rounded-2xl border border-line bg-bg-elevated transition-all duration-300 ease-out-quart hover:-translate-y-1 hover:border-forest-500 hover:shadow-[0_24px_60px_-30px_rgba(15,27,21,0.3)]";
+
 export function Cases() {
   return (
     <section id="cases" className="py-20 md:py-28">
@@ -61,44 +69,65 @@ export function Cases() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {cases.map((c, i) => (
-            <a
-              key={c.name}
-              href={c.href}
-              target="_blank"
-              rel="noopener"
-              data-reveal
-              style={{ "--reveal-delay": `${i * 90}ms` } as React.CSSProperties}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-bg-elevated transition-all duration-300 ease-out-quart hover:-translate-y-1 hover:border-forest-500 hover:shadow-[0_24px_60px_-30px_rgba(15,27,21,0.3)]"
-            >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-50">
-                {c.image ? (
-                  <Image
-                    src={c.image}
-                    alt={c.imageAlt ?? c.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                ) : c.mockup === "boralicitar" ? (
-                  <BoraLicitarMockup />
-                ) : null}
-              </div>
-
-              <div className="flex items-center justify-between gap-3 p-5">
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-ink-faint">
-                    {c.tag}
-                  </span>
-                  <span className="font-display text-xl tracking-tight text-ink">
-                    {c.name}
-                  </span>
-                  <span className="text-xs text-ink-muted">{c.domain}</span>
+          {cases.map((c, i) => {
+            const Seta = c.interno ? ArrowRight : ArrowUpRight;
+            const miolo = (
+              <>
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-50">
+                  {c.image ? (
+                    <Image
+                      src={c.image}
+                      alt={c.imageAlt ?? c.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  ) : c.mockup === "boralicitar" ? (
+                    <BoraLicitarMockup />
+                  ) : null}
                 </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-ink-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-forest-700" />
-              </div>
-            </a>
-          ))}
+
+                <div className="flex items-center justify-between gap-3 p-5">
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-ink-faint">
+                      {c.tag}
+                    </span>
+                    <span className="font-display text-xl tracking-tight text-ink">
+                      {c.name}
+                    </span>
+                    <span className="text-xs text-ink-muted">{c.domain}</span>
+                  </div>
+                  <Seta className="h-5 w-5 shrink-0 text-ink-muted transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-forest-700" />
+                </div>
+              </>
+            );
+
+            const estilo = { "--reveal-delay": `${i * 90}ms` } as React.CSSProperties;
+
+            return c.interno ? (
+              <Link
+                key={c.name}
+                href={c.href}
+                data-reveal
+                style={estilo}
+                className={CARD_CLASS}
+              >
+                {miolo}
+              </Link>
+            ) : (
+              <a
+                key={c.name}
+                href={c.href}
+                target="_blank"
+                rel="noopener"
+                data-reveal
+                style={estilo}
+                className={CARD_CLASS}
+              >
+                {miolo}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -119,7 +148,7 @@ function BoraLicitarMockup() {
         <span className="h-2 w-2 rounded-full bg-yellow-300/70" />
         <span className="h-2 w-2 rounded-full bg-green-300/70" />
         <span className="ml-2 truncate text-[10px] text-bg/40">
-          kanban.boralicitar.com.br
+          kanban.boralicitar.com
         </span>
       </div>
       <div className="grid flex-1 grid-cols-4 gap-1.5">
