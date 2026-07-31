@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container-tight flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-2.5 font-display text-base tracking-tight text-ink">
           <Image
-            src="/logo.png"
+            src="/logo-36.webp"
             alt="Tribe Solutions"
             width={28}
             height={28}

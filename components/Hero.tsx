@@ -64,7 +64,7 @@ export function Hero() {
 
       <div className="container-tight relative flex min-h-[88vh] flex-col items-center justify-center py-20 text-center md:min-h-[80vh]">
         <Image
-          src="/logo.png"
+          src="/logo-88.webp"
           alt="Tribe Solutions"
           width={88}
           height={88}

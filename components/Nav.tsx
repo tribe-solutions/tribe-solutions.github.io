@@ -22,7 +22,7 @@ export function Nav() {
           className="flex items-center gap-2.5 font-display text-lg tracking-tight text-ink"
         >
           <Image
-            src="/logo.png"
+            src="/logo-36.webp"
             alt="Tribe Solutions"
             width={36}
             height={36}
