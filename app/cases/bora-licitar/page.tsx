@@ -102,6 +102,35 @@ export default function BoraLicitarCase() {
               </p>
             </div>
           </div>
+
+          {/* Faixa sangrada: a cena estabelece o mundo antes de a página explicá-lo.
+              `object-cover` recorta o céu conforme a altura — a linha dos agentes
+              fica sempre visível porque a âncora está abaixo do centro. */}
+          <figure data-reveal className="mt-14 md:mt-20">
+            <Image
+              src="/cases/bora-licitar/escritorio-da-floresta.webp"
+              alt="Escritório da Floresta: cena em pixel art com os agentes da Tribe reunidos sob um céu estrelado, à beira do rio"
+              width={2200}
+              height={1237}
+              priority
+              sizes="100vw"
+              className="h-[16rem] w-full bg-[#0b1020] object-cover object-[center_84%] sm:h-[20rem] lg:h-[27rem]"
+            />
+            <figcaption className="container-tight mt-3 text-sm text-ink-faint">
+              O Escritório da Floresta — a tela que a equipe usa para ver a frota inteira de
+              uma vez.{" "}
+              <a
+                href="https://kanban.boralicitar.com/agentes/escritorio.html"
+                target="_blank"
+                rel="noopener"
+                data-umami-event="case-escritorio"
+                className="text-forest-500 underline decoration-line-strong underline-offset-4 transition-colors hover:text-forest-700"
+              >
+                Está no ar, aberta
+              </a>
+              .
+            </figcaption>
+          </figure>
         </section>
 
         {/* ---------- Funil ---------- */}
@@ -131,7 +160,7 @@ export default function BoraLicitarCase() {
           <div className="container-tight">
             <div data-reveal className="max-w-xl">
               <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
-                A frota
+                O Escritório da Floresta
               </p>
               <h2 className="mt-3 text-3xl tracking-tight text-ink md:text-4xl">
                 Onze agentes, uma responsabilidade cada.
