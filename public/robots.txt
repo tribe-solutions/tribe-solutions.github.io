@@ -1,0 +1,23 @@
+# Content-Signal declara o que assistentes de IA podem fazer com este conteúdo.
+# Não é possível emitir por app/robots.ts: o tipo MetadataRoute.Robots do Next
+# só aceita allow/disallow/crawlDelay/sitemap/host. Por isso este arquivo é
+# estático — e por isso app/robots.ts foi removido, senão os dois colidem.
+#
+# Até 31/07/2026 o Cloudflare gerava este arquivo com `ai-train=no` e um bloco
+# de Disallow para ClaudeBot, GPTBot, CCBot e outros, além de devolver HTTP 403
+# de verdade. Resultado: quem perguntava sobre a Tribe num assistente recebia
+# erro. Os dois recursos foram desligados no painel (Security > Settings >
+# "Block AI bots" e AI Crawl Control > Signals > "Managed robots.txt").
+#
+#   search   = indexar e devolver link/trecho
+#   ai-input = ler agora para responder uma pergunta (é o que faz um assistente
+#              conseguir citar a Tribe)
+#   ai-train = treinar modelo. Deixado SEM declaração de propósito: nem concede
+#              nem restringe. Para recusar treino explicitamente, acrescentar
+#              `,ai-train=no` na linha abaixo.
+
+User-agent: *
+Content-Signal: search=yes,ai-input=yes
+Allow: /
+
+Sitemap: https://tribesolutions.com.br/sitemap.xml
