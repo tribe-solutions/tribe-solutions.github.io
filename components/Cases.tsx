@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ConsultorioMiniatura } from "@/components/case/ConsultorioMockup";
 
 type CaseItem = {
   name: string;
@@ -10,7 +11,7 @@ type CaseItem = {
   tag: string;
   image?: string;
   imageAlt?: string;
-  mockup?: "boralicitar";
+  mockup?: "boralicitar" | "consultorio";
   /** Rota interna: abre na mesma aba e não leva rel="noopener". */
   interno?: boolean;
 };
@@ -22,6 +23,14 @@ const cases: CaseItem[] = [
     domain: "476 triadas · 10 na mesa",
     tag: "SaaS · GovTech",
     mockup: "boralicitar",
+    interno: true,
+  },
+  {
+    name: "Consultório Digital",
+    href: "/cases/consultorio-digital",
+    domain: "Agenda, prontuário e valor social",
+    tag: "Sistema · Saúde",
+    mockup: "consultorio",
     interno: true,
   },
   {
@@ -62,13 +71,19 @@ export function Cases() {
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
               Cases
             </p>
+            {/* Não é mais "No ar agora": o Consultório Digital entrou na grade e
+                é projeto entregue, não operação corrente. O título precisa valer
+                para os cinco. */}
             <h2 className="mt-2 text-3xl tracking-tight text-ink md:text-4xl">
-              No ar agora.
+              O que já saiu daqui.
             </h2>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Três colunas, não quatro: com cinco cases a grade de 4 deixa um órfão
+            na segunda linha, e os dois cards que são mockup de tela só ficam
+            legíveis com a largura maior. */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cases.map((c, i) => {
             const Seta = c.interno ? ArrowRight : ArrowUpRight;
             const miolo = (
@@ -79,11 +94,13 @@ export function Cases() {
                       src={c.image}
                       alt={c.imageAlt ?? c.name}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   ) : c.mockup === "boralicitar" ? (
                     <BoraLicitarMockup />
+                  ) : c.mockup === "consultorio" ? (
+                    <ConsultorioMiniatura />
                   ) : null}
                 </div>
 
