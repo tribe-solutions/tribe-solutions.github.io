@@ -17,21 +17,23 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-line/60 bg-bg/85 backdrop-blur-md">
       <div className="container-tight flex h-16 items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-display text-lg tracking-tight text-ink"
-        >
+        <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src="/logo-36.webp"
-            alt="Tribe Solutions"
-            width={36}
+            src="/brand/tree.svg"
+            alt=""
+            width={35}
             height={36}
             priority
-            className="h-9 w-9"
+            className="h-9 w-auto"
           />
-          <span>
-            Tribe<span className="text-forest-500">.</span>
-          </span>
+          <Image
+            src="/brand/type-tribe.svg"
+            alt="Tribe Solutions"
+            width={76}
+            height={21}
+            priority
+            className="h-[21px] w-auto translate-y-px"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

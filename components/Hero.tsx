@@ -64,12 +64,12 @@ export function Hero() {
 
       <div className="container-tight relative flex min-h-[88vh] flex-col items-center justify-center py-20 text-center md:min-h-[80vh]">
         <Image
-          src="/logo-88.webp"
+          src="/brand/tree.svg"
           alt="Tribe Solutions"
-          width={88}
+          width={86}
           height={88}
           priority
-          className="rise h-20 w-20 md:h-22 md:w-22"
+          className="rise h-20 w-auto md:h-22"
         />
 
         <h1 className="mt-8 max-w-3xl text-balance text-4xl leading-[1.1] tracking-tight text-ink sm:text-5xl md:text-6xl">

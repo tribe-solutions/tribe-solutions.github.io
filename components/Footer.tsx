@@ -6,15 +6,21 @@ export function Footer() {
   return (
     <footer className="border-t border-line/60 bg-bg py-12">
       <div className="container-tight flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2.5 font-display text-base tracking-tight text-ink">
+        <div className="flex items-center gap-2.5">
           <Image
-            src="/logo-36.webp"
-            alt="Tribe Solutions"
-            width={28}
+            src="/brand/tree.svg"
+            alt=""
+            width={27}
             height={28}
-            className="h-7 w-7"
+            className="h-7 w-auto"
           />
-          <span>Tribe Solutions</span>
+          <Image
+            src="/brand/type-tribe.svg"
+            alt="Tribe Solutions"
+            width={69}
+            height={19}
+            className="h-[19px] w-auto translate-y-px"
+          />
         </div>
 
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-ink-muted">
