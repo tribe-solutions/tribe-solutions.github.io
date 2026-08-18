@@ -55,20 +55,35 @@ lib/
   site.ts             # número do WhatsApp + waLink() (fonte única)
 public/
   CNAME               # tribesolutions.com.br
-  logo*.png/webp      # variantes do logo (geradas por scripts/optimize-logo.mjs)
+  logo.webp           # símbolo, versão de tela (o que Nav/Hero carregam)
+  wordmark.webp       # "TRIBE" com o símbolo no R (Nav)
+  lockup.webp         # "TRIBE SOLUTIONS" (Footer)
+  brand/              # kit completo: símbolo, wordmark e lockup, on-light e on-dark
   og-banner.png       # preview de link 1200×630 (gerado por scripts/generate-og.mjs)
   favicon_io/
 scripts/
-  optimize-logo.mjs   # gera logo otimizado a partir de fonte 2000×2000
+  brand-src/          # MESTRES da marca (fonte de verdade) + artes originais
+  optimize-logo.mjs   # gera todos os rasters a partir dos mestres
   generate-og.mjs     # gera og-banner.png a partir de public/og-logo.png
+  brand-kit.mjs       # empacota o kit pra uso fora do site
 ```
 
-## Otimizando o logo
+## A marca
 
-Se substituir o logo original, coloque o PNG 2000×2000 (alpha) em `public/logo-original.png` e rode:
+A fonte de verdade são os dois PNGs transparentes em `scripts/brand-src/`
+(`symbol.png` e `lockup.png`), recortados das artes originais guardadas em
+`scripts/brand-src/original/`. Todo o resto é derivado:
 
 ```bash
-node scripts/optimize-logo.mjs
+npm run brand                       # rasters do site (public/)
+node scripts/brand-kit.mjs          # kit pra fora do site (~/Downloads/tribe-marca)
 ```
 
-(em seguida apague `logo-original.png` antes de commitar)
+A arte nasceu para fundo escuro (a massa do tucano e das letras é branca).
+`optimize-logo.mjs` deriva a versão **on-light**, que troca essa massa por
+verde-floresta e inverte o volume do gradiente — é ela que entra no site, que é
+papel. A versão **on-dark** fica em `public/brand/` para quem precisar aplicar a
+marca sobre fundo escuro.
+
+Trocar a arte = substituir os dois mestres e rodar os dois comandos. Nenhum
+raster deve ser editado à mão.
