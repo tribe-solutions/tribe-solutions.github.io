@@ -64,11 +64,11 @@ export function Hero() {
 
       <div className="container-tight relative flex min-h-[88vh] flex-col items-center justify-center py-20 text-center md:min-h-[80vh]">
         <Image
-          src="/brand/tree.svg"
+          src="/logo.webp"
           alt="Tribe Solutions"
-          width={86}
-          height={88}
-          priority
+          width={256}
+          height={256}
+          preload
           className="rise h-20 w-auto md:h-22"
         />
 

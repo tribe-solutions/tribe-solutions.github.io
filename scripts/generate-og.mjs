@@ -9,11 +9,13 @@ const SRC = "public/og-logo.png";
 const OUT = "public/og-banner.png";
 const BG = { r: 248, g: 246, b: 240, alpha: 1 }; // --color-bg #f8f6f0
 
-const LOGO_HEIGHT = 460;
+// O lockup é horizontal (≈3,2:1): limitar só a altura estoura a largura do
+// banner, então a arte cabe numa área segura com margem dos dois lados.
+const AREA = { width: 940, height: 420 };
 
 const logo = await sharp(SRC)
   .trim()
-  .resize({ height: LOGO_HEIGHT, fit: "inside" })
+  .resize({ ...AREA, fit: "inside" })
   .png()
   .toBuffer();
 

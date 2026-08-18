@@ -17,21 +17,17 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-line/60 bg-bg/85 backdrop-blur-md">
       <div className="container-tight flex h-16 items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 font-display text-lg tracking-tight text-ink"
-        >
+        {/* O logotipo já traz o símbolo dentro do "R": aqui ele entra
+            inteiro, sem repetir o nome em texto ao lado. */}
+        <Link href="/" className="flex items-center" aria-label="Tribe Solutions — início">
           <Image
-            src="/brand/tree.svg"
+            src="/wordmark.webp"
             alt="Tribe Solutions"
-            width={35}
-            height={36}
-            priority
-            className="h-9 w-auto"
+            width={512}
+            height={117}
+            preload
+            className="h-8 w-auto"
           />
-          <span>
-            Tribe<span className="text-forest-500">.</span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
