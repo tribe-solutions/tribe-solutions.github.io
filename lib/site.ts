@@ -5,6 +5,12 @@
 export const WHATSAPP_NUMBER = "5592991873520";
 
 /**
+ * Número comercial do Hermes (+55 92 94687-8747, aberto no WhatsApp Web). Recebe
+ * os contatos que vêm do Instagram: o /links e o atalho /whatsapp da bio.
+ */
+export const HERMES_WHATSAPP_NUMBER = "5592946878747";
+
+/**
  * Umami Cloud. O ID vai no HTML servido, então é público — não é segredo.
  * Vazio desliga o tracking (o script nem é injetado).
  */
@@ -33,7 +39,7 @@ export function trackEvent(event: string, data?: Record<string, unknown>) {
 }
 
 /** Monta o link wa.me com a saudação padrão + mensagem opcional. */
-export function waLink(message?: string) {
+export function waLink(message?: string, numero: string = WHATSAPP_NUMBER) {
   const text = message?.trim() ? `${GREETING}\n\n${message.trim()}` : GREETING;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+  return `https://wa.me/${numero}?text=${encodeURIComponent(text)}`;
 }
