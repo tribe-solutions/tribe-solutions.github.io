@@ -7,6 +7,7 @@ import { waLink } from "@/lib/site";
  *  "#servicos" sozinho não teria pra onde rolar. */
 const links = [
   { href: "/#servicos", label: "Serviços" },
+  { href: "/atenux", label: "Atenux" },
   { href: "/#cases", label: "Cases" },
   { href: "/#licitacoes", label: "Licitações" },
   { href: "/artigos", label: "Artigos" },

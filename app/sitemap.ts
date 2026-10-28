@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: SITE },
+    { url: `${SITE}/atenux/` },
     { url: `${SITE}/cases/bora-licitar/` },
     { url: `${SITE}/cases/consultorio-digital/` },
     { url: `${SITE}/artigos/` },

@@ -58,6 +58,10 @@ export const organizationJsonLd = {
         "Bots e automação de atendimento e processos no WhatsApp.",
       ],
       [
+        "Atenux",
+        "Plataforma de atendimento: WhatsApp, Instagram e chat do site numa caixa de entrada só, com atendentes ilimitados e IA opcional.",
+      ],
+      [
         "Software por licitação",
         "Desenvolvimento e fornecimento de software para o setor público, com assinatura ICP-Brasil.",
       ],
