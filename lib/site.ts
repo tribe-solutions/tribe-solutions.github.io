@@ -11,6 +11,13 @@ export const WHATSAPP_NUMBER = "5592991873520";
 export const HERMES_WHATSAPP_NUMBER = "5592946878747";
 
 /**
+ * Número oficial da Tribe na Cloud API (+55 11 93618-1302, WABA "Tech Tribe
+ * Solutions"). Não abre em celular: as mensagens caem na caixa de entrada da
+ * Atenux. Recebe os CTAs da seção e da página /atenux.
+ */
+export const ATENUX_WHATSAPP_NUMBER = "5511936181302";
+
+/**
  * Umami Cloud. O ID vai no HTML servido, então é público — não é segredo.
  * Vazio desliga o tracking (o script nem é injetado).
  */

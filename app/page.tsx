@@ -1,4 +1,5 @@
 import { About } from "@/components/About";
+import { Atenux } from "@/components/Atenux";
 import { Cases } from "@/components/Cases";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -16,6 +17,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Services />
+        <Atenux />
         <Cases />
         <Licitacoes />
         <About />
