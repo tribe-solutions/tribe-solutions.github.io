@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Fraunces } from "next/font/google";
 import { UMAMI_WEBSITE_ID } from "@/lib/site";
 import { organizationJsonLd } from "@/lib/structured-data";
@@ -83,6 +84,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <Script src="/webchat.js" strategy="afterInteractive" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
