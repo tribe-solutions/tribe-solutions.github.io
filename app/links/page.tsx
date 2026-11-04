@@ -12,7 +12,7 @@ import {
   MapPin,
   MessageCircle,
 } from "lucide-react";
-import { HERMES_WHATSAPP_NUMBER, waLink } from "@/lib/site";
+import { waLink } from "@/lib/site";
 import { listarArtigos } from "@/lib/artigos";
 
 /**
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 /** Mensagem distinta da do site: na chegada do WhatsApp dá pra saber que veio da bio. */
-const WHATSAPP_HREF = waLink("Vim pelo link da bio do Instagram.", HERMES_WHATSAPP_NUMBER);
+const WHATSAPP_HREF = waLink("Vim pelo link da bio do Instagram.");
 
 type Item = {
   alvo: string;

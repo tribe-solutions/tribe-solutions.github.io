@@ -1,21 +1,11 @@
 /**
- * WhatsApp que recebe os CTAs do site. É o número direto do Roberto, diferente
- * do telefone institucional em `structured-data.ts` — trocar um não troca o outro.
+ * WhatsApp comercial da Tribe na Cloud API (+55 11 93618-1302).
+ * Todos os CTAs do site recebem atendimento na caixa de entrada da Atenux.
  */
-export const WHATSAPP_NUMBER = "5592991873520";
+export const WHATSAPP_NUMBER = "5511936181302";
 
-/**
- * Número comercial do Hermes (+55 92 94687-8747, aberto no WhatsApp Web). Recebe
- * os contatos que vêm do Instagram: o /links e o atalho /whatsapp da bio.
- */
-export const HERMES_WHATSAPP_NUMBER = "5592946878747";
-
-/**
- * Número oficial da Tribe na Cloud API (+55 11 93618-1302, WABA "Tech Tribe
- * Solutions"). Não abre em celular: as mensagens caem na caixa de entrada da
- * Atenux. Recebe os CTAs da seção e da página /atenux.
- */
-export const ATENUX_WHATSAPP_NUMBER = "5511936181302";
+/** A seção e a página /atenux usam o mesmo atendimento comercial. */
+export const ATENUX_WHATSAPP_NUMBER = WHATSAPP_NUMBER;
 
 /**
  * Umami Cloud. O ID vai no HTML servido, então é público — não é segredo.
