@@ -2,12 +2,8 @@
 
 import { useEffect } from "react";
 
-/**
- * Espera o script do Umami (defer no layout) por até 1,5 s, dispara
- * `whatsapp-atalho` com a origem e só então troca de página. Sem Umami
- * (bloqueador, ID vazio) redireciona do mesmo jeito.
- */
-export default function WhatsAppRedirect({ href }: { href: string }) {
+/** Registra a origem do atalho e abre o hub de links preservando a query. */
+export default function WhatsAppRedirect() {
   useEffect(() => {
     const origem = new URLSearchParams(window.location.search).get("src") || "instagram";
     const inicio = Date.now();
@@ -16,12 +12,12 @@ export default function WhatsAppRedirect({ href }: { href: string }) {
     const ir = () => {
       if (feito) return;
       feito = true;
-      window.location.replace(href);
+      window.location.replace(`/links/${window.location.search}`);
     };
 
     const tentar = () => {
       if (window.umami) {
-        window.umami.track("whatsapp-atalho", { origem });
+        window.umami.track("links-atalho", { origem });
         setTimeout(ir, 300);
       } else if (Date.now() - inicio > 1500) {
         ir();
@@ -30,7 +26,7 @@ export default function WhatsAppRedirect({ href }: { href: string }) {
       }
     };
     tentar();
-  }, [href]);
+  }, []);
 
   return null;
 }
