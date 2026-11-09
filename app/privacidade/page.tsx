@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const ATUALIZADA = "9 de novembro de 2026";
-const EMAIL = "roberto.campos@tribesolutions.com.br";
+const EMAIL = "contato@tribesolutions.com.br";
 
 type Secao = { id: string; titulo: string; paragrafos?: string[]; itens?: string[] };
 
@@ -71,7 +71,7 @@ const SECOES: Secao[] = [
     id: "retencao",
     titulo: "5. Por quanto tempo guardamos",
     paragrafos: [
-      "Conversas de atendimento e dados de contato ficam guardados enquanto houver relação comercial ou interesse em retomar o contato, e são apagados quando você pedir. Dados de contrato e fiscais ficam pelo prazo que a lei exige (em geral, 5 anos). Registros técnicos do site ficam pelo tempo definido pelo provedor, normalmente poucos dias.",
+      "Conversas de atendimento e dados de contato ficam guardados enquanto houver relação comercial ou interesse em retomar o contato, e podem ser apagados a seu pedido. Dados de contrato e fiscais ficam pelo prazo que a lei exige (em geral, 5 anos). Registros técnicos do site ficam pelo tempo definido pelo provedor, normalmente poucos dias.",
     ],
   },
   {
@@ -86,8 +86,7 @@ const SECOES: Secao[] = [
     titulo: "7. Como pedir a exclusão dos seus dados",
     itens: [
       `Envie um e-mail para ${EMAIL} com o assunto "Exclusão de dados", informando o número de telefone, e-mail ou perfil usado no contato com a Tribe.`,
-      "Se o contato foi pelo WhatsApp, você também pode escrever \"apagar meus dados\" na própria conversa.",
-      "Confirmamos o pedido e concluímos a exclusão em até 15 dias, exceto os dados que a lei nos obriga a manter (por exemplo, notas fiscais).",
+      "Respondemos o pedido e fazemos a exclusão, exceto os dados que a lei nos obriga a manter (por exemplo, notas fiscais).",
     ],
   },
   {
