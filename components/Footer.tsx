@@ -38,7 +38,10 @@ export function Footer() {
         </nav>
 
         <p className="text-xs text-ink-faint">
-          © {year} Tribe Solutions · Manaus / AM
+          © {year} Tribe Solutions · Manaus / AM ·{" "}
+          <Link href="/privacidade" className="underline-offset-2 transition-colors hover:text-ink hover:underline">
+            Privacidade
+          </Link>
         </p>
       </div>
     </footer>
