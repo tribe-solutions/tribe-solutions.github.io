@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/cases/bora-licitar/` },
     { url: `${SITE}/cases/consultorio-digital/` },
     { url: `${SITE}/artigos/` },
+    { url: `${SITE}/privacidade/` },
     ...artigos,
   ];
 }
