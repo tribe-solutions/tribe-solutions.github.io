@@ -1,0 +1,12 @@
+{
+  "ramo": "poucos-itens",
+  "ramo_nome": "Ramo de exemplo com poucos itens",
+  "uf": "rr",
+  "uf_nome": "Roraima",
+  "descricao": "EXEMPLO DE BUILD: abaixo de 30 itens, esta página não pode ser gerada (regra anti-spam).",
+  "abertura": "EXEMPLO DE BUILD.",
+  "atualizado": "2026-11-18",
+  "periodo": { "inicio": "2026-01-01", "fim": "2026-10-31" },
+  "fonte": { "nome": "PNCP", "url": "https://pncp.gov.br" },
+  "total_itens": 12
+}
