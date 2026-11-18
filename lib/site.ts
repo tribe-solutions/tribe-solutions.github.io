@@ -8,9 +8,11 @@ export const WHATSAPP_NUMBER = "5511936181302";
 export const ATENUX_WHATSAPP_NUMBER = WHATSAPP_NUMBER;
 
 /**
- * Umami Cloud. O ID vai no HTML servido, então é público — não é segredo.
- * Vazio desliga o tracking (o script nem é injetado).
+ * Umami self-hosted da Tribe na Oracle (migrado do Umami Cloud em 18/11/2026,
+ * mesmo ID e com o histórico importado). O ID vai no HTML servido, então é
+ * público: não é segredo. Vazio desliga o tracking (o script nem é injetado).
  */
+export const UMAMI_HOST = "https://analytics.boracorrerbrasil.com.br";
 export const UMAMI_WEBSITE_ID = "3f86e85e-0fd7-42be-a4bc-66cb2aaebec8";
 
 /**
