@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Fraunces } from "next/font/google";
-import { UMAMI_WEBSITE_ID } from "@/lib/site";
+import { UMAMI_HOST, UMAMI_WEBSITE_ID } from "@/lib/site";
 import { organizationJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -95,7 +95,7 @@ export default function RootLayout({
       {UMAMI_WEBSITE_ID && (
         <script
           defer
-          src="https://cloud.umami.is/script.js"
+          src={`${UMAMI_HOST}/script.js`}
           data-website-id={UMAMI_WEBSITE_ID}
         />
       )}
