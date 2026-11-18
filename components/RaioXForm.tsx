@@ -158,7 +158,7 @@ export function RaioXTopo({ intro, vitrine }: { intro: React.ReactNode; vitrine:
         </p>
       </div>
 
-      <div ref={caixa} className="scroll-mt-24">
+      <div ref={caixa} className="scroll-mt-24 lg:flex lg:min-h-[580px] lg:items-center">
         {!r ? (
           vitrine
         ) : (
