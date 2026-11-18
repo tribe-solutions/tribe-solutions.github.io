@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/privacidade/` },
     ...artigos,
     { url: `${SITE}/licitacoes/` },
+    { url: `${SITE}/licitacoes/raio-x/` },
     ...licitacoes,
   ];
 }

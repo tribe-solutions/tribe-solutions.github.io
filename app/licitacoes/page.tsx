@@ -63,7 +63,10 @@ export default function LicitacoesPage() {
           <section className="mx-auto mt-14 max-w-2xl rounded-2xl border border-forest-500 p-6 text-center md:p-8">
             <h2 className="text-xl text-ink">Quanto a sua empresa deixou na mesa?</h2>
             <p className="mt-2 text-ink-muted">
-              Mande o CNPJ no WhatsApp e receba o raio-x do seu ramo.
+              Mande o CNPJ no WhatsApp e receba o raio-x do seu ramo.{" "}
+              <Link href="/licitacoes/raio-x" className="underline">
+                Como funciona
+              </Link>
             </p>
             <a
               href={waLink("Quero meu raio-x")}
