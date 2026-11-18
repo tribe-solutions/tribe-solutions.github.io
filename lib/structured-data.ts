@@ -1,4 +1,5 @@
 import type { Artigo } from "./artigos";
+import type { PaginaLicitacao } from "./licitacoes";
 
 const SITE_URL = "https://tribesolutions.com.br";
 
@@ -98,4 +99,42 @@ export function articleJsonLd(artigo: Artigo) {
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
+}
+
+/**
+ * JSON-LD da página de dados `/licitacoes/<ramo>/<uf>`: um Dataset (o
+ * número com período, fonte e data da coleta) e, se houver perguntas, um
+ * FAQPage com o mesmo texto que aparece na página.
+ */
+export function licitacaoJsonLd(p: PaginaLicitacao) {
+  const url = `${SITE_URL}/licitacoes/${p.ramo}/${p.uf}/`;
+  const nome = `Licitações de ${p.ramo_nome.toLowerCase()} no ${p.uf_nome}`;
+  const grafo: Record<string, unknown>[] = [
+    {
+      "@type": "Dataset",
+      "@id": `${url}#dataset`,
+      name: nome,
+      description: p.descricao,
+      url,
+      inLanguage: "pt-BR",
+      dateModified: p.atualizado,
+      temporalCoverage: `${p.periodo.inicio}/${p.periodo.fim}`,
+      spatialCoverage: { "@type": "State", name: p.uf_nome },
+      isBasedOn: p.fonte.url,
+      creator: { "@id": `${SITE_URL}/#organization` },
+      variableMeasured: p.numeros.map((n) => n.rotulo),
+    },
+  ];
+  if (p.perguntas.length) {
+    grafo.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: p.perguntas.map((q) => ({
+        "@type": "Question",
+        name: q.pergunta,
+        acceptedAnswer: { "@type": "Answer", text: q.resposta },
+      })),
+    });
+  }
+  return { "@context": "https://schema.org", "@graph": grafo };
 }

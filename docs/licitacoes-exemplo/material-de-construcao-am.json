@@ -1,0 +1,31 @@
+{
+  "ramo": "material-de-construcao",
+  "ramo_nome": "Material de construção",
+  "uf": "am",
+  "uf_nome": "Amazonas",
+  "descricao": "EXEMPLO DE BUILD, NÚMEROS FICTÍCIOS. Quanto os órgãos públicos do Amazonas compram de material de construção, com período e fonte.",
+  "abertura": "EXEMPLO DE BUILD: este arquivo existe só para provar que o gerador funciona e nunca vai para o ar. Os números abaixo são fictícios.\n\nO texto de verdade vem do Bem-te-vi, a partir do plano do Tatu e da base do raio-x.",
+  "atualizado": "2026-11-18",
+  "periodo": { "inicio": "2026-01-01", "fim": "2026-10-31" },
+  "fonte": { "nome": "PNCP (Portal Nacional de Contratações Públicas)", "url": "https://pncp.gov.br" },
+  "total_itens": 1234,
+  "numeros": [
+    { "rotulo": "itens comprados por órgãos públicos", "valor": 1234, "formato": "inteiro" },
+    { "rotulo": "órgãos compradores diferentes", "valor": 56, "formato": "inteiro" },
+    { "rotulo": "valor total dos itens", "valor": 7890000, "formato": "reais" }
+  ],
+  "compras_abertas": [
+    {
+      "orgao": "Prefeitura Exemplo",
+      "objeto": "Aquisição de cimento e areia (exemplo)",
+      "prazo": "2026-11-30",
+      "url": "https://pncp.gov.br"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Pequena empresa pode vender material de construção para a prefeitura?",
+      "resposta": "Pode. Resposta de exemplo; o texto real vem do Bem-te-vi e passa pelo Tucano."
+    }
+  ]
+}
