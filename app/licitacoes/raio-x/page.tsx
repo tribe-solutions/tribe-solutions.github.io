@@ -5,6 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RaioXChat } from "@/components/RaioXChat";
+import { RaioXForm } from "@/components/RaioXForm";
 const SITE_URL = "https://tribesolutions.com.br";
 import { waLink } from "@/lib/site";
 
@@ -46,9 +47,9 @@ const MOSTRA = [
 ];
 
 const PASSOS = [
-  { n: "01", titulo: "Chame no WhatsApp", texto: "O botão abre a conversa com a mensagem pronta. É só enviar." },
-  { n: "02", titulo: "Mande o CNPJ", texto: "Digite o número ou envie a foto ou o PDF do cartão CNPJ." },
-  { n: "03", titulo: "Receba o raio-x", texto: "Em cerca de um minuto, com o período e a fonte de cada número." },
+  { n: "01", titulo: "Digite o CNPJ", texto: "Aqui no site ou no WhatsApp, onde também vale foto ou PDF do cartão CNPJ." },
+  { n: "02", titulo: "Veja o seu ramo", texto: "O que o governo comprou, o que ficou sem fornecedor e quem está vendendo." },
+  { n: "03", titulo: "Fale com a Tribe", texto: "Se fizer sentido, a gente mostra no WhatsApp como participar das compras." },
 ];
 
 const PERGUNTAS = [
@@ -124,12 +125,25 @@ export default function RaioXPage() {
                   Quanto a sua empresa deixou na mesa em licitação este ano?
                 </h1>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-                  Mande o CNPJ no WhatsApp e veja o que o governo comprou do seu ramo, o que ficou sem
-                  fornecedor e quem está vendendo. Com número, período e fonte.
+                  Digite o CNPJ e veja o que o governo comprou do seu ramo, o que ficou sem fornecedor e
+                  quem está vendendo. Com número, período e fonte.
                 </p>
-                <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <CtaWhatsApp local="topo" />
-                  <span className="text-sm text-ink-faint">Leva um minuto. Só precisa do CNPJ.</span>
+                <div className="mt-9">
+                  <RaioXForm />
+                  <p className="mt-4 text-sm text-ink-faint">
+                    Prefere pelo WhatsApp?{" "}
+                    <a
+                      href={waLink("Quero meu raio-x")}
+                      target="_blank"
+                      rel="noopener"
+                      data-umami-event="raiox-cta-whatsapp"
+                      data-umami-event-local="topo"
+                      className="text-forest-500 underline underline-offset-2"
+                    >
+                      Mande o CNPJ por lá
+                    </a>
+                    .
+                  </p>
                 </div>
               </div>
               <figure data-reveal style={{ "--reveal-delay": "150ms" } as React.CSSProperties}>
@@ -214,7 +228,7 @@ export default function RaioXPage() {
                 Como funciona
               </p>
               <h2 className="mt-3 text-3xl tracking-tight text-bg md:text-4xl">
-                Três mensagens e pronto.
+                Um minuto, um CNPJ.
               </h2>
             </div>
             <ol className="mt-12 grid gap-8 md:grid-cols-3">
