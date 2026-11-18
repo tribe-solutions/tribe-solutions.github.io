@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listarArtigos } from "@/lib/artigos";
+import { listarPaginas } from "@/lib/licitacoes";
 
 export const dynamic = "force-static";
 
@@ -16,6 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: a.updated ?? a.date,
   }));
 
+  const licitacoes = listarPaginas().map((p) => ({
+    url: `${SITE}/licitacoes/${p.ramo}/${p.uf}/`,
+    lastModified: p.atualizado,
+  }));
+
   return [
     { url: SITE },
     { url: `${SITE}/atenux/` },
@@ -24,5 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/artigos/` },
     { url: `${SITE}/privacidade/` },
     ...artigos,
+    { url: `${SITE}/licitacoes/` },
+    ...licitacoes,
   ];
 }
