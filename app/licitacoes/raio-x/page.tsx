@@ -5,7 +5,7 @@ import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { RaioXChat } from "@/components/RaioXChat";
-import { RaioXForm } from "@/components/RaioXForm";
+import { RaioXTopo } from "@/components/RaioXForm";
 const SITE_URL = "https://tribesolutions.com.br";
 import { waLink } from "@/lib/site";
 
@@ -107,53 +107,39 @@ export default function RaioXPage() {
       <Nav />
       <main className="flex-1">
         {/* ---------- Abertura ---------- */}
-        <section className="py-16 md:py-24">
+        <section className="py-10 md:py-14">
           <div className="container-tight">
-            <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
-              <div data-reveal>
-                <Link
-                  href="/licitacoes"
-                  className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Licitações por ramo
-                </Link>
-                <p className="mt-6 text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
-                  Raio-x de licitação · grátis
-                </p>
-                <h1 className="mt-3 text-balance text-4xl leading-[1.08] tracking-tight text-ink md:text-5xl">
-                  Quanto a sua empresa deixou na mesa em licitação este ano?
-                </h1>
-                <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-                  Digite o CNPJ e veja o que o governo comprou do seu ramo, o que ficou sem fornecedor e
-                  quem está vendendo. Com número, período e fonte.
-                </p>
-                <div className="mt-9">
-                  <RaioXForm />
-                  <p className="mt-4 text-sm text-ink-faint">
-                    Prefere pelo WhatsApp?{" "}
-                    <a
-                      href={waLink("Quero meu raio-x")}
-                      target="_blank"
-                      rel="noopener"
-                      data-umami-event="raiox-cta-whatsapp"
-                      data-umami-event-local="topo"
-                      className="text-forest-500 underline underline-offset-2"
-                    >
-                      Mande o CNPJ por lá
-                    </a>
-                    .
+            <RaioXTopo
+              intro={
+                <>
+                  <Link
+                    href="/licitacoes"
+                    className="inline-flex items-center gap-1.5 text-sm text-ink-muted transition-colors hover:text-ink"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    Licitações por ramo
+                  </Link>
+                  <p className="mt-5 text-xs font-medium uppercase tracking-[0.18em] text-forest-500">
+                    Raio-x de licitação · grátis
                   </p>
-                </div>
-              </div>
-              <figure data-reveal style={{ "--reveal-delay": "150ms" } as React.CSSProperties}>
-                <RaioXChat />
-                <figcaption className="mx-auto mt-4 max-w-[400px] text-center text-sm text-ink-faint">
-                  Raio-x de verdade do ramo de material de construção no Amazonas. O nome da empresa é de
-                  exemplo.
-                </figcaption>
-              </figure>
-            </div>
+                  <h1 className="mt-3 text-balance text-4xl leading-[1.08] tracking-tight text-ink md:text-5xl">
+                    Quanto a sua empresa deixou na mesa em licitação este ano?
+                  </h1>
+                  <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
+                    Digite o CNPJ e veja o que o governo comprou do seu ramo, o que ficou sem fornecedor e quem
+                    está vendendo. Com número, período e fonte.
+                  </p>
+                </>
+              }
+              vitrine={
+                <figure>
+                  <RaioXChat />
+                  <figcaption className="mx-auto mt-3 max-w-[400px] text-center text-sm text-ink-faint">
+                    Exemplo com números reais do ramo de construção no Amazonas.
+                  </figcaption>
+                </figure>
+              }
+            />
           </div>
         </section>
 
